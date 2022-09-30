@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Projects from "./components/Projects";
+import Awards from "./components/Awards";
+import Footer from "./components/Footer";
 
 // const scroll = (page) => {
 //   console.log(page)
@@ -21,8 +23,13 @@ function App() {
   return (
     
     <Router>
-      <div className="app text-sm sm:text-md text-gray-200 w-full">
+      <div className="app text-xs font-light sm:text-sm text-gray-200 w-full">
         <Navbar className="sticky top-0" />
+
+
+
+
+        
         {/* <img src={`./images/work/${count}`} /> */}
         {/* <Routes>
           <Route path="/" exact />
@@ -37,11 +44,12 @@ function App() {
           <p>dsadsadadsd</p>
         </div> */}
         <Projects className="projects"/>
-        <div className="projects">
-          <p>dsadsadadsd</p>
-        </div>
+        <Awards className="awards"/>
+        <Footer className="footer"/>
       </div>
-  
+
+
+
     </Router>
   
   );

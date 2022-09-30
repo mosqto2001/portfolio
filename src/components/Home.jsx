@@ -10,7 +10,7 @@ const scroll = (page) => {
 export default function Home() {
   
   return (
-    <section className="text-gray-200 flex justify-center items-start z-10 mt-">
+    <section className="introduce text-gray-200 flex justify-center items-start z-10">
       
       <div className="max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex z-20">
         <div className="max-w-3xl mx-auto text-center">

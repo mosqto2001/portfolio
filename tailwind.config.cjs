@@ -1,9 +1,14 @@
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
+    
     extend: {
+      fontSize: {
+        xs: ['14px', '20px'],
+        sm: ['16px', '20px'],
+      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
