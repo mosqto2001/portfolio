@@ -26,7 +26,7 @@ export default function Profile() {
       <div className="max-w-screen h-[20px] bg-yellow-100 profile"></div>
       <div className="max-w-screen-xl px-4 mx-auto lg:items-center lg:flex z-20">
         <div className="flex flex-col justify-center items-center max-w-3xl mx-auto text-center">
-          <p className="mt-16 sm:mt-32 text-gray-200">
+          <p className="mt-16 sm:mt-32 text-gray-200 text-xs">
             My nickname is Mos. I'm interested in front-end development. <br />
             I'm experienced in developing web application, designing websites
             and developing a browser game.

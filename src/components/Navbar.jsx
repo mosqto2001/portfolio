@@ -2,11 +2,26 @@ import React, { useState, useEffect, useRef } from "react";
 import { useLocation, Link } from "react-router-dom";
 import IconMenu from "../icons/IconMenu"
 
+const pages = ["introduce","projects","awards"]
+
 const scroll = (page) => {
   console.log(page);
   const section = document.querySelector(page);
   section.scrollIntoView({ behavior: "smooth", block: "start" });
 };
+
+function getOffset(element) {
+    const section = document.querySelector(element);
+    const offset = section.getBoundingClientRect();
+    return {
+        top: offset.top + window.scrollY
+      };
+  }
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  
 
 export default function Navbar() {
   const [selectedNav, setSelectedNav] = useState("introduce");
@@ -18,6 +33,15 @@ export default function Navbar() {
   const handleScroll = () => {
     if (window.scrollY > 150) {
       setVisible(true);
+      console.log(getOffset(".awards").top)
+      console.log("s" + window.scrollY)
+      if(window.scrollY <= getOffset(`.${pages[1]}`).top - 100){
+        setSelectedNav(pages[0])
+      }else if(window.scrollY <= getOffset(`.${pages[2]}`).top - 100){
+        setSelectedNav(pages[1])
+      }else {
+        setSelectedNav(pages[2])
+      }
     } else {
       setVisible(false);
     }
@@ -45,7 +69,7 @@ export default function Navbar() {
                 <img
                   className="h-10 w-auto"
                   src="./favicon.png"
-                  alt="Your Company"
+                  alt="Logo"
                 />
               </div>
               <div onClick={() => setShowNav(!showNav)} className="sm:hidden flex flex-shrink-0 items-center text-4xl">
@@ -53,42 +77,19 @@ export default function Navbar() {
               </div>
               <div className="hidden sm:ml-6 sm:block ">
                 <div className="sm:flex justify-between space-x-2">
-                  <Link
-                    to="/"
-                    onClick={() => scroll(".introduce")}
+                {pages.map((page,index) => <Link
+                    to={page==="introduce" ? "/": `/${page}`}
+                    onClick={() => scroll(`.${page}`)}
                     className={`${
-                      selectedNav == ""
+                      selectedNav === page || (page === "introduce" && selectedNav === "")
                         ? "bg-gray-200 text-dark-900"
                         : "text-gray-200"
-                    }  hover:text-dark-900 hover:bg-yellow-100 px-8 py-2 rounded-md text-sm font-medium`}
+                    } hover:text-dark-900 hover:bg-yellow-100 px-8 py-2 rounded-md text-sm font-medium`}
                     aria-current="page"
+                    key={index}
                   >
-                    Introduce
-                  </Link>
-
-                  <Link
-                    to="/projects"
-                    onClick={() => scroll(".projects")}
-                    className={`${
-                      selectedNav == "projects"
-                        ? "bg-gray-200 text-dark-900"
-                        : "text-gray-200"
-                    } hover:text-dark-900 hover:bg-yellow-100 px-8 py-2 rounded-md text-sm font-medium`}
-                  >
-                    Projects
-                  </Link>
-
-                  <Link
-                    to="/awards"
-                    onClick={() => scroll(".awards")}
-                    className={`${
-                      selectedNav == "awards"
-                        ? "bg-gray-200 text-dark-900"
-                        : "text-gray-200"
-                    } hover:text-dark-900 hover:bg-yellow-100 px-8 py-2 rounded-md text-sm font-medium`}
-                  >
-                    Awards
-                  </Link>
+                    {capitalizeFirstLetter(page)}
+                  </Link>)}
                 </div>
               </div>
             </div>
@@ -97,40 +98,23 @@ export default function Navbar() {
         </div>
         <div className={`${showNav ? "" : "hidden"} sm:hidden `} id="mobile-menu">
           <div className="space-y-1 px-2 pt-2 pb-3 ">
-            <Link
-              to="/"
-              onClick={() => scroll(".introduce")}
+          {pages.map((page,index) => 
+                    <Link
+             to={page==="introduce" ? "/": `/${page}`}
+              onClick={() => scroll(`.${page}`)}
               className={`${
-                selectedNav == ""
+                selectedNav === page || (page === "introduce" && selectedNav === "")
                   ? "bg-gray-200 text-dark-900"
                   : "text-gray-200"
               } hover:text-dark-900 hover:bg-yellow-100 block px-3 py-2 rounded-md text-base font-medium`}
               aria-current="page"
+              key={index}
             >
-              Introduce
+             {capitalizeFirstLetter(page)}
             </Link>
-            <Link
-              to="/projects"
-              onClick={() => scroll(".projects")}
-              className={`${
-                selectedNav == "projects"
-                  ? "bg-gray-200 text-dark-900"
-                  : "text-gray-200"
-              } hover:text-dark-900 hover:bg-yellow-100 block px-3 py-2 rounded-md text-base font-medium`}
-            >
-              Projects
-            </Link>
-            <Link
-              to="/awards"
-              onClick={() => scroll(".awards")}
-              className={`${
-                selectedNav == "awards"
-                  ? "bg-gray-200 text-dark-900"
-                  : "text-gray-200"
-              } hover:text-dark-900 hover:bg-yellow-100 block px-3 py-2 rounded-md text-base font-medium`}
-            >
-              Awards
-            </Link>
+                )}
+          
+        
           </div>
         </div>
       </nav>

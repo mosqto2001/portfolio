@@ -6,9 +6,10 @@ export default function Awards() {
     {
       name: "Winner of 42Bangkok Virtual Hackathon 2021",
       description:
-        'I am a winner of The virtual hackathon by 42Bangkok and CPF within the theme "Coding and AI for Agriculture and Food Technology"',
+        'I am a winner of The virtual hackathon by 42Bangkok and CPF within the theme "Coding and AI for Agriculture and Food Technology". I created the food supply chain model applied to blockchain. Additionally, I created the prototype application by using Figma.',
       date: "Jun 26 - 27, 2021",
       image: "virtual_hackathon",
+      hasProject: true
     },   {
         name: "SIT Academic Excellence Scholarship",
         description:
