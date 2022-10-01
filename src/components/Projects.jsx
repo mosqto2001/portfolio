@@ -23,7 +23,7 @@ export default function Projects() {
       link: "https://meowrun.site/",
       about:
         "Meow Run is an online game which can be played on both computers and mobile devices. This game was launch in Open Beta on September 25. There are currently more than 250 players. In this game, players could run, jump and slide their way over obstacles. I am a front-end developer who developed this project by using Vue.js to design the user interface and Kaboom.js to construct the game.",
-      features:["Endless running game which can be played on browser (chrome)","Responsive on both desktop and mobile","Player can choose and buy characters in Shop","Highscore ranking","Game settings","Sign up, login and email verification"],
+      features:["Endless running game which can be played on browser (chrome)","Responsive on both desktop and mobile","Player can choose and buy characters in Shop","Highscore ranking","Game settings","Sign up, login and email verification","This project use CRUD operations with Node.js backend"],
         skills: [{name:"Vue.js", type:"Frontend",icon:IconVuejs},{name:"Tailwind", type:"Frontend",icon:IconTailwind},{name:"Kaboom.js", type:"Game",icon:IconGame},{name:"Node.js", type:"Backend",icon:IconNodejs},{name:"Express.js", type:"Backend",icon:IconNodejs},{name:"Firebase", type:"Cloud",icon:IconFirebase}]
       ,video: "meowrun.mp4",github:"https://github.com/mosqto2001/meowrun2"
     },   {
@@ -34,7 +34,7 @@ export default function Projects() {
       link: "https://intproj21.sit.kmutt.ac.th/or1/",
       about:
         "Mana Clinic is website for appointments event. User can create, edit and delete scheduled events. This project was developed by using Vue.js, Spring boot and MySQL. I am a front-end developer who create this website by using Vue.js and Tailwind CSS.",
-      features:["Create, edit and delete scheduled events","Create, edit and delete scheduled event categories","Search event by filter","Input validation such as email and overlap of date/time validation ","Authentication token"],
+      features:["Create, edit and delete scheduled events","Create, edit and delete scheduled event categories","Search event by filter","Input validation such as email and overlap of date/time validation ","Authentication token","This project use CRUD operations with Spring boot backend"],
         skills: [{name:"Vue.js", type:"Frontend",icon:IconVuejs},{name:"Tailwind", type:"Frontend",icon:IconTailwind},{name:"Spring boot", type:"Backend",icon:IconSpring},{name:"MySQL", type:"Database",icon:IconMysql},]
       ,video: "manaclinic.mp4",github:"https://github.com/Sprewwii/INT221-2021-OR-1"
     },{

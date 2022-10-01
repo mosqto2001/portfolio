@@ -9,9 +9,9 @@ export default function ProjectAbout(props) {
         <h2 className="text-xl font-bold sm:text-4xl mt-4">About</h2>
 
         <p className="mt-4 ">{props.project.about}</p>
-        <a href={props.project.github}><div className="flex justify-end items-center text-gray-500 hover:text-yellow-100 flex gap-x-2">github <IconGithub className="text-2xl"/></div></a>
+        <a className="mt-2 flex justify-end items-center text-gray-500 hover:text-yellow-100 flex gap-x-2" href={props.project.github}>github <IconGithub className="text-2xl"/></a>
       </div>
-      <div className="mt-10 flex justify-center sm:justify-start gap-3 sm:gap-6 text-xl sm:text-3xl text-white">
+      <div className="mt-2 sm:mt-0 flex justify-center lg:justify-start gap-3 sm:gap-6 text-xl sm:text-3xl text-white">
         {props.project.skills.map((skill,index) => (
           <div key={index} className="flex flex-col items-center justify-center">
             <skill.icon />

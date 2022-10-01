@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {Parallax,ParallaxLayer} from '@react-spring/parallax'
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
@@ -24,25 +25,18 @@ function App() {
     
     <Router>
       <div className="app text-xs font-light sm:text-sm text-gray-200 w-full">
+        {/* <Parallax pages={4}>
+        <ParallaxLayer speed={0.5}>
+          <Home className="home" />
+</ParallaxLayer>
+<ParallaxLayer offset={1} speed={1}>
+          <Profile className="profile"/>
+</ParallaxLayer>
+        </Parallax> */}
+     
         <Navbar className="sticky top-0" />
-
-
-
-
-        
-        {/* <img src={`./images/work/${count}`} /> */}
-        {/* <Routes>
-          <Route path="/" exact />
-          <Route path="/price"  />
-          <Route path="/artwork" />
-          <Route path="/" exact element={<Home/>} />
-      </Routes> */}
-
         <Home className="home" />
         <Profile className="profile"/>
-        {/* <div className="profile">
-          <p>dsadsadadsd</p>
-        </div> */}
         <Projects className="projects"/>
         <Awards className="awards"/>
         <Footer className="footer"/>
